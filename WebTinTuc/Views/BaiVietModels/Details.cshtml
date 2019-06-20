@@ -1,0 +1,74 @@
+﻿@model WebTinTuc.Models.BaiVietModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết Bài Viết</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal table table-hover">
+        <dt>
+            @Html.DisplayNameFor(model => model.TheLoaiModels.TenTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TheLoaiModels.TenTheLoai)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.Anh)
+        </dt>
+
+        <dd>
+            <img src="@Model.Anh" width="500" height="300" />
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDang)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.NoiDung)
+        </dd>
+        <hr />
+        <dt>
+            @Html.DisplayNameFor(model => model.LuotXem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LuotXem)
+        </dd>
+        <hr />
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BaiVietID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

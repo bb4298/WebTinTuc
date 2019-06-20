@@ -1,0 +1,106 @@
+﻿
+@model PagedList.IPagedList<WebTinTuc.Models.BaiVietModels>
+@using PagedList.Mvc;
+<!-- Kết thúc-->
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+@*@using (Html.BeginForm())
+    {
+        <p>
+            Title: @Html.TextBox("SearchString") --- Category: @Html.DropDownList("TheLoaiID", "All") <input type="submit" value="Tìm kiếm" />
+        </p>
+
+    }*@
+
+
+
+<table class="table table-bordered table-hover jumbotron">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TheLoaiModels.TenTheLoai)*@ <p>Tên thể loại</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.TieuDe)*@ <p>Tiêu đề</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Anh)*@ <p>Ảnh</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NgayDang)*@ <p>Ngày đăng</p>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MoTa)*@ <p>Mô tả</p>
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.NoiDung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThaiHienThi)
+            </th>*@
+        <th>
+            @*@Html.DisplayNameFor(model => model.LuotXem)*@ <p>Lượt Xem</p>
+        </th>
+        <th>
+            <p>Thao tác</p>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TheLoaiModels.TenTheLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TieuDe)
+            </td>
+            <td>
+                <img src="@item.Anh" width="200" height="100" />
+                @*@Html.DisplayFor(modelItem => item.Anh)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            @*<td>
+                    @Html.Raw(item.NoiDung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrangThaiHienThi)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.LuotXem)
+            </td>
+
+
+            <!-- 3. Đoạn cần thêm-->
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.TheLoaiModels.TenTheLoai)
+                </td>*@
+            <!-- Kết thúc -->
+            <td>
+                <div class="btn btn-warning">@Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.BaiVietID }) </div><br />
+                <div class="btn btn-warning">@Html.ActionLink("Xem chi tiết", "Details", new { id = item.BaiVietID }) </div><br />
+                <div class="btn btn-warning">@Html.ActionLink("Xoá", "Delete", new { id = item.BaiVietID }) </div>
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+<!-- Thêm mã phân trang -->
+<br />
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page }))
+<!-- Kết thúc -->
