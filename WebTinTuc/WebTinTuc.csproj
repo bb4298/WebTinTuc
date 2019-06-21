@@ -3338,11 +3338,6 @@
     <Content Include="Views\TheLoaiModels\Details.cshtml" />
     <Content Include="Views\TheLoaiModels\Edit.cshtml" />
     <Content Include="Views\TheLoaiModels\Index.cshtml" />
-    <Content Include="Views\CommentModels\Create.cshtml" />
-    <Content Include="Views\CommentModels\Delete.cshtml" />
-    <Content Include="Views\CommentModels\Details.cshtml" />
-    <Content Include="Views\CommentModels\Edit.cshtml" />
-    <Content Include="Views\CommentModels\Index.cshtml" />
     <Content Include="Views\NguoiDungModels\Create.cshtml" />
     <Content Include="Views\NguoiDungModels\Delete.cshtml" />
     <Content Include="Views\NguoiDungModels\Details.cshtml" />
@@ -3365,6 +3360,11 @@
     <Content Include="Views\BaiVietModels\Edit.cshtml" />
     <Content Include="Views\BaiVietModels\Index.cshtml" />
     <Content Include="Views\BaiVietModels\IndexAdmin.cshtml" />
+    <Content Include="Views\CommentModels\Create.cshtml" />
+    <Content Include="Views\CommentModels\Delete.cshtml" />
+    <Content Include="Views\CommentModels\Details.cshtml" />
+    <Content Include="Views\CommentModels\Edit.cshtml" />
+    <Content Include="Views\CommentModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,9 +15,10 @@ namespace WebTinTuc.Controllers
         private WebTTDB db = new WebTTDB();
 
         // GET: CommentModels
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            var commentModels = db.commentModels.Include(c => c.BaiVietModels).Include(c => c.NguoiDungModels);
+            var commentModels = db.commentModels.Include(c => c.BaiVietModels).Include(c => c.NguoiDungModels).Where(c => c.BaiVietModels.BaiVietID == id);
+            ViewBag.tenBaiViet = db.baiVietModels.Where(c => c.BaiVietID == id).Select(c=>c.TieuDe).FirstOrDefault().ToString();
             return View(commentModels.ToList());
         }
 

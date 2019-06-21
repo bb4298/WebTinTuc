@@ -11,7 +11,7 @@ using WebTinTuc.Models;
 namespace WebTinTuc.Controllers
 {
     [Authorize(Users = "quangnguyen.4298@gmail.com")]
-    [Authorize(Roles = "Admin")]
+    
     public class TheLoaiModelsController : Controller
     {
         private WebTTDB db = new WebTTDB();
